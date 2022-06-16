@@ -23,6 +23,6 @@ servers.json
   "Server_Name": "Server_Address"
 }
 ```
-服务器地址可以使用srv的mc地址。
+服务器地址可以使用srv的mc地址，支持实时更改，保存即生效。
 **重要！**
 必须能从外网访问！
