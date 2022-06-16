@@ -16,8 +16,10 @@ public class DataSave extends ModTemplate {
     @Override
     public void Init() {
         DataSaveCommand dataSaveCommand = new DataSaveCommand();
-        CommandAPI.register(CommandNode.creat("datasave",e->{}).then(CommandNode.creat("update",dataSaveCommand)));
-        CommandAPI.register(CommandNode.creat("datasave",e->{}).then(CommandNode.creat("download",dataSaveCommand)));
+        CommandAPI.register(CommandNode.creat("datasave", e -> {
+        }).then(CommandNode.creat("update", dataSaveCommand)));
+        CommandAPI.register(CommandNode.creat("datasave", e -> {
+        }).then(CommandNode.creat("download", dataSaveCommand)));
         log.info("KoroWorldServer-DataSave is Loaded!");
     }
 
