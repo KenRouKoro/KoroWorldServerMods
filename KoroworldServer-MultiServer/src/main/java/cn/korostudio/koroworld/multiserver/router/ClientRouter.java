@@ -58,7 +58,9 @@ public class ClientRouter {
 
     @GetMapping("/default")
     public static String defaultServer(@RequestParam Map<String, Object> params) {
-        String defServerName = MultiServer.getSetting().getStr("defaultServer", "lobby");
+        boolean shadow = MultiServer.getSetting().getBool("defaultServer", false);
+        String defServerName = shadow?"shadow":MultiServer.getSetting().getStr("defaultServer", "lobby");
+
         JSONObject backJSON = new JSONObject();
 
         backJSON.putOnce("status", MultiServer.getServers().containsKey(defServerName));
